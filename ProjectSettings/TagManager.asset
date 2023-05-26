@@ -17,8 +17,8 @@ TagManager:
   - Backround
   - Bouncing
   - Enemies
-  - 
-  - 
+  - Hazards
+  - Bullets
   - 
   - 
   - 
@@ -52,6 +52,9 @@ TagManager:
     locked: 0
   - name: Climbing
     uniqueID: 2335878827
+    locked: 0
+  - name: Hazards
+    uniqueID: 1429191273
     locked: 0
   - name: Enemies
     uniqueID: 3820950741

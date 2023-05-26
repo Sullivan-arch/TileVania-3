@@ -16,6 +16,8 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] float climbSpeed = 5f;
     float gravityScaleAtStart;
     [SerializeField] Vector2 deathJump = new Vector2 (10f, 10f);
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform gun;
 
     bool isAlive = true;
 
@@ -36,6 +38,14 @@ public class PlayerMovementScript : MonoBehaviour
         ClimbLadder();
         Die();
     }
+
+    void OnFire(InputValue value)
+    {
+        if(!isAlive) { return; }
+        Instantiate(bullet, gun.position, transform.rotation);
+
+    }
+
 
     void OnMove(InputValue value)
     {
@@ -94,7 +104,7 @@ public class PlayerMovementScript : MonoBehaviour
     }
     void Die()
     {
-        if(myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")))
+        if(myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")))
         {
             isAlive = false;
             myAnimator.SetTrigger("Dying");
