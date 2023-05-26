@@ -57,9 +57,9 @@ public class PlayerMovementScript : MonoBehaviour
     {
         if(!isAlive) { return; }
         if(!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return;}
+        
         if(value.isPressed)
         {
-
             myRigidbody.velocity += new Vector2 (0f, jumpSpeed);
         }
     }
