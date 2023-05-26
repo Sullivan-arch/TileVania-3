@@ -43,7 +43,6 @@ public class PlayerMovementScript : MonoBehaviour
     {
         if(!isAlive) { return; }
         Instantiate(bullet, gun.position, transform.rotation);
-
     }
 
 
