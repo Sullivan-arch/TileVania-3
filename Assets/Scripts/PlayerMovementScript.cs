@@ -12,7 +12,7 @@ public class PlayerMovementScript : MonoBehaviour
     Animator myAnimator;
     CapsuleCollider2D myBodyCollider;
     BoxCollider2D myFeetCollider;
-    [SerializeField] float jumpSpeed = 5f;
+    [SerializeField] float JumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
     float gravityScaleAtStart;
     [SerializeField] Vector2 deathJump = new Vector2 (10f, 10f);
@@ -60,7 +60,7 @@ public class PlayerMovementScript : MonoBehaviour
         
         if(value.isPressed)
         {
-            myRigidbody.velocity += new Vector2 (0f, jumpSpeed);
+            myRigidbody.velocity += new Vector2 (0f, JumpSpeed);
         }
     }
     
