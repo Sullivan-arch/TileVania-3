@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
 public class PlayerMovementScript : MonoBehaviour
 {
     [SerializeField] float runSpeed = 10f;
