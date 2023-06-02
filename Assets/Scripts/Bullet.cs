@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
-        player = FindObjectofType<PlayerMovement>();
+        player = FindObjectOfType<PlayerMovement>();
         xSpeed = player.transform.localScale.x * bulletSpeed;
     }
 
@@ -20,5 +20,19 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         myRigidbody.velocity = new Vector2 (xSpeed, 0f);
+    }
+
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.tag == "Enemy")
+        {
+            Destroy(other.gameObject);
+        }
+        Destroy(gameObject);
+    }
+
+    void OnCollisionEnter2D(Collision2D other) 
+    {
+        Destroy(gameObject);
     }
 }
